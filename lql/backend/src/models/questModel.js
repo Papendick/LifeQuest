@@ -105,6 +105,23 @@ class QuestModel {
     quest.stages.splice(index, 1);
     return true;
   }
+
+  /**
+   * Markiert ein Etappenziel als erledigt.
+   */
+  completeStage(questId, stageId) {
+    const stage = this.updateStage(questId, stageId, { completed: true });
+    return stage;
+  }
+
+  /**
+   * Berechnet den Fortschritt einer Quest in Prozent.
+   */
+  calculateProgress(quest) {
+    if (!quest.stages.length) return 0;
+    const done = quest.stages.filter((s) => s.completed).length;
+    return Math.round((done / quest.stages.length) * 100);
+  }
 }
 
 export default new QuestModel();
