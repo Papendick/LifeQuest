@@ -1,6 +1,6 @@
 # Life Quest Log – Projektgrundgerüst
 
-Dieses Verzeichnis enthält das Grundgerüst für die Mobile‑App „Life Quest Log (LQL)“.  Die App besteht aus einem separaten Frontend (`app/`), einem Backend mit REST‑API (`backend/`) und einem KI‑Service (`services/ai/`), der die Google Gemini‑API anbindet.  Im Rahmen dieses ersten Schritts wurde eine einfache Benutzerverwaltung mit JWT‑Authentifizierung implementiert, um eine solide Basis für weitere Module (Quests, ToDos, Gesetze, Tagebuch, Belohnungen, Punkte) zu schaffen.
+Dieses Verzeichnis enthält das Grundgerüst für die Mobile‑App „Life Quest Log (LQL)“.  Die App besteht aus einem separaten Frontend (`app/`), einem Backend mit REST‑API (`backend/`) und einem KI‑Service (`services/ai/`), der die Google Gemini‑API anbindet.  Die Umsetzung nutzt **React Native** für die mobile Oberfläche und **Node.js mit Express** für das Backend.  Benutzer können sich registrieren und per JWT anmelden.  Weitere Module (Quests, ToDos, Gesetze, Tagebuch, Belohnungen, Punkte) lassen sich problemlos ergänzen.
 
 ## Struktur
 
@@ -12,7 +12,7 @@ Dieses Verzeichnis enthält das Grundgerüst für die Mobile‑App „Life Ques
     - `models/` – Minimale Datenmodelle (derzeit ein einfaches In‑Memory‑Usermodell für Demonstrationszwecke).
   - `server.js` – Einstiegspunkt des Backends.  Lädt Umgebungsvariablen, konfiguriert Express und bindet die Routen ein.
   - `package.json` – Beschreibt die Abhängigkeiten und Startskripte des Backends.
-  - `.env` – Beispielhafte Konfigurationsdatei mit Platzhaltern für den Gemini‑API‑Key, das Modell, die Basis‑URL sowie Port‑ und JWT‑Einstellungen.
+  - `.env.example` – Beispielhafte Konfigurationsdatei mit Platzhaltern für den Gemini‑API‑Key, das Modell, die Basis‑URL sowie Port‑ und JWT‑Einstellungen.  Kopiere diese Datei nach `.env`, um eigene Werte zu hinterlegen.
 - `services/ai/` – Enthält den Entwurf eines `geminiService.js`, der in Zukunft den Aufruf der Google Gemini‑API kapselt.  Aktuell sind nur Platzhalterfunktionen implementiert.
 
 ## Hinweise
