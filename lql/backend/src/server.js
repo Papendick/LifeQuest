@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import questRoutes from './routes/questRoutes.js';
 
 // Load configuration from .env file
 dotenv.config();
@@ -15,6 +16,8 @@ app.get('/', (req, res) => {
 
 // user registration and login routes
 app.use('/api/users', userRoutes);
+// quest management routes
+app.use('/api/quests', questRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
